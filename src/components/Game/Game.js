@@ -34,7 +34,6 @@ function Game() {
       .sort(
         (a, b) => stuatuses.indexOf(a.status) - stuatuses.indexOf(b.status)
       );
-    console.log(newStatusList);
     setStatusList(newStatusList);
   }
 
