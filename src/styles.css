@@ -125,18 +125,18 @@ h1 {
 }
 
 .correct {
-  background: var(--color-success);
-  border-color: var(--color-success);
+  background: var(--color-success) !important;
+  border-color: var(--color-success) !important;
   color: white;
 }
 .incorrect {
-  background: var(--color-gray-300);
-  border-color: var(--color-gray-300);
+  background: var(--color-gray-300) !important;
+  border-color: var(--color-gray-300) !important;
   color: white;
 }
 .misplaced {
-  background: var(--color-warning);
-  border-color: var(--color-warning);
+  background: var(--color-warning) !important;
+  border-color: var(--color-warning) !important;
   color: white;
 }
 
