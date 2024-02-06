@@ -8,7 +8,7 @@ function Keyboard() {
       {rows.map((row) => (
         <p key={row}>
           {row.split("").map((char) => (
-            <span>{char}</span>
+            <span key={char}>{char}</span>
           ))}
         </p>
       ))}
