@@ -4,18 +4,18 @@ function GuessInput({ addGuess }) {
   const [guess, setGuess] = useState("");
   return (
     <form
-      class="guess-input-wrapper"
+      className="guess-input-wrapper"
       onSubmit={(e) => {
         e.preventDefault();
 
         console.log("Guess:", guess);
 
         addGuess(guess);
-        
+
         setGuess("");
       }}
     >
-      <label for="guess-input">Enter guess:</label>
+      <label htmlFor="guess-input">Enter guess:</label>
       <input
         id="guess-input"
         type="text"
