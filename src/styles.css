@@ -219,6 +219,7 @@ h1 {
   margin-bottom: 0.5em;
 }
 
+/* KEYBOARD Styles: */
 .keyboard {
   display: grid;
   row-gap: 0.25rem;
