@@ -20,6 +20,7 @@ function GuessInput({ addGuess }) {
         id="guess-input"
         type="text"
         required
+        autoComplete="off"
         pattern="[A-Z]{5}"
         title="Enter a 5-letter word (real word 🙄)"
         value={guess}
