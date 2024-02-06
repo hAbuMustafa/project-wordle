@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 
 function GuessInput({ addGuess }) {
-  const [guess, setGuess] = useState("");
+  const [guessText, setGuessText] = useState("");
   return (
     <form
       className="guess-input-wrapper"
       onSubmit={(e) => {
         e.preventDefault();
 
-        console.log("Guess:", guess);
+        console.log("Guess:", guessText);
 
-        addGuess(guess);
+        addGuess(guessText);
 
-        setGuess("");
+        setGuessText("");
       }}
     >
       <label htmlFor="guess-input">Enter guess:</label>
@@ -23,10 +23,10 @@ function GuessInput({ addGuess }) {
         autoComplete="off"
         pattern="[A-Z]{5}"
         title="Enter a 5-letter word (real word 🙄)"
-        value={guess}
+        value={guessText}
         maxLength={5}
         onChange={(e) => {
-          setGuess(e.target.value.toUpperCase());
+          setGuessText(e.target.value.toUpperCase());
         }}
       />
     </form>
