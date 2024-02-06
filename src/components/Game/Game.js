@@ -36,6 +36,8 @@ function Game() {
 
   function clearGuesses() {
     setGuessList([]);
+    
+    answer = sample(WORDS);
   }
 
   return (
