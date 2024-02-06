@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function GuessInput({ addGuess }) {
+function GuessInput({ addGuess, disabled }) {
   const [guessText, setGuessText] = useState("");
   return (
     <form
@@ -28,6 +28,7 @@ function GuessInput({ addGuess }) {
         onChange={(e) => {
           setGuessText(e.target.value.toUpperCase());
         }}
+        disabled={disabled}
       />
     </form>
   );
