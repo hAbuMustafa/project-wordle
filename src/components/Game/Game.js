@@ -9,6 +9,7 @@ import GuessResults from "../GuessResults";
 import HappyBanner from "../HappyBanner";
 import SadBanner from "../SadBanner";
 import StartOver from "../StartOver";
+import Keyboard from "../Keyboard";
 
 // Pick a random word on every pageload.
 const answer = sample(WORDS);
@@ -36,7 +37,7 @@ function Game() {
 
   function clearGuesses() {
     setGuessList([]);
-    
+
     answer = sample(WORDS);
   }
 
@@ -44,6 +45,7 @@ function Game() {
     <>
       <GuessResults guessList={guessList} answer={answer} />
       <GuessInput addGuess={addGuess} disabled={gameOver} />
+      <Keyboard />
       {noCorrectGuess && (
         <SadBanner answer={answer}>
           <StartOver clearGuesses={clearGuesses} />
