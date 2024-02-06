@@ -12,6 +12,9 @@ import SadBanner from "../SadBanner";
 import StartOver from "../StartOver";
 import Keyboard from "../Keyboard";
 
+const stuatuses = ["correct", "misplaced", "incorrect"];
+const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
 function Game() {
   const [answer, setAnswer] = React.useState(() => sample(WORDS));
   console.info({ answer });
@@ -26,7 +29,12 @@ function Game() {
   const gameOver = noCorrectGuess || correctGuess;
 
   function calculateCharStatus(gl) {
-    const newStatusList = [...gl.map((ges) => checkGuess(ges, answer)).flat()];
+    const newStatusList = [...gl.map((ges) => checkGuess(ges, answer)).flat()]
+      .sort((a, b) => chars.indexOf(a.letter) - chars.indexOf(b.letter))
+      .sort(
+        (a, b) => stuatuses.indexOf(a.status) - stuatuses.indexOf(b.status)
+      );
+    console.log(newStatusList);
     setStatusList(newStatusList);
   }
 
