@@ -8,8 +8,6 @@ function GuessInput({ addGuess, disabled }) {
       onSubmit={(e) => {
         e.preventDefault();
 
-        console.log("Guess:", guessText);
-
         addGuess(guessText);
 
         setGuessText("");

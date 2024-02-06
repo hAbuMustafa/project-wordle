@@ -7,7 +7,6 @@ function Guess({ guess, answer }) {
     ? checkGuess(guess, answer).map((entry) => `cell ${entry.status}`)
     : Array(5).fill("cell");
 
-  console.log({ answer, guess });
   return (
     <p className="guess">
       {range(5).map((_, i) => {
