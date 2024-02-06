@@ -12,12 +12,9 @@ import SadBanner from "../SadBanner";
 import StartOver from "../StartOver";
 import Keyboard from "../Keyboard";
 
-// Pick a random word on every pageload.
-const answer = sample(WORDS);
-// To make debugging easier, we'll log the solution in the console.
-console.info({ answer });
-
 function Game() {
+  const [answer, setAnswer] = React.useState(() => sample(WORDS));
+  console.info({ answer });
   const [guessList, setGuessList] = React.useState([]);
   const [statusList, setStatusList] = React.useState([]);
 
@@ -29,9 +26,8 @@ function Game() {
   const gameOver = noCorrectGuess || correctGuess;
 
   function calculateCharStatus(gl) {
-    const newStatusList = [...gl.map(ges=>checkGuess(ges,answer)).flat()];
+    const newStatusList = [...gl.map((ges) => checkGuess(ges, answer)).flat()];
     setStatusList(newStatusList);
-    console.log(newStatusList);
   }
 
   function addGuess(guess) {
@@ -48,7 +44,7 @@ function Game() {
   function clearGuesses() {
     setGuessList([]);
 
-    answer = sample(WORDS);
+    setAnswer(sample(WORDS));
   }
 
   return (
