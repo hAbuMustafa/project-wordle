@@ -219,6 +219,25 @@ h1 {
   margin-bottom: 0.5em;
 }
 
+.keyboard {
+  display: grid;
+  row-gap: 0.25rem;
+}
+
+.keyboard p {
+  display: flex;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.keyboard p span {
+  display: inline-block;
+  border: 1px solid gray;
+  text-align: center;
+  width: 1.5em;
+  height: 1.5em;
+}
+
 /*
   Keyframe animations
 */
