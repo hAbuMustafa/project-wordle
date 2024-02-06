@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function GuessInput() {
+function GuessInput({ addGuess }) {
   const [guess, setGuess] = useState("");
   return (
     <form
@@ -10,6 +10,8 @@ function GuessInput() {
 
         console.log("Guess:", guess);
 
+        addGuess(guess);
+        
         setGuess("");
       }}
     >
